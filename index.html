@@ -1,0 +1,892 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="theme-color" content="#ffffff">
+    <meta
+        name="description"
+        content="A modern responsive image gallery"
+    >
+
+    <title>Gallery — Explore Beautiful Moments</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     PAGE LOADER
+========================= -->
+
+<div class="page-loader" id="pageLoader">
+    <div class="loader-logo">
+        <span class="camera-icon">●</span>
+        <span>Gallery</span>
+    </div>
+
+    <div class="loader-line">
+        <span></span>
+    </div>
+</div>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header class="header" id="header">
+
+    <div class="nav-container">
+
+        <!-- LOGO -->
+        <a href="#" class="logo">
+            <span class="logo-camera">
+                <svg viewBox="0 0 24 24">
+                    <path d="M9 4l1.5-2h3L15 4h3a4 4 0 014 4v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8a4 4 0 014-4h3z"/>
+                    <circle cx="12" cy="12.5" r="4"/>
+                </svg>
+            </span>
+
+            <span>Gallery</span>
+        </a>
+
+
+        <!-- DESKTOP NAV -->
+        <nav class="desktop-nav">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#gallery" class="nav-link">Gallery</a>
+            <a href="#categories" class="nav-link">Categories</a>
+            <a href="#about" class="nav-link">About</a>
+        </nav>
+
+
+        <!-- RIGHT SIDE -->
+        <div class="nav-right">
+
+            <!-- SEARCH -->
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search images..."
+                    autocomplete="off"
+                >
+
+                <button class="search-button" id="searchButton">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="7"></circle>
+                        <path d="M16.5 16.5L21 21"></path>
+                    </svg>
+                </button>
+
+            </div>
+
+
+            <!-- THEME -->
+            <button
+                class="theme-button"
+                id="themeButton"
+                aria-label="Toggle theme"
+            >
+                <svg class="moon-icon" viewBox="0 0 24 24">
+                    <path d="M21 15.5A9 9 0 0110.5 3 9 9 0 1021 15.5z"/>
+                </svg>
+
+                <svg class="sun-icon" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/>
+                </svg>
+            </button>
+
+
+            <!-- LOGIN -->
+            <button class="login-button">
+                Login
+            </button>
+
+
+            <!-- MOBILE MENU -->
+            <button class="mobile-menu" id="mobileMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     MOBILE MENU
+========================= -->
+
+<div class="mobile-menu-panel" id="mobileMenuPanel">
+
+    <a href="#home">Home</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#categories">Categories</a>
+    <a href="#about">About</a>
+
+</div>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main>
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-background"></div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <span class="hero-small">
+            ✦ THE WORLD THROUGH A LENS
+        </span>
+
+        <h1>
+            Explore
+            <br>
+            <span>Beautiful Moments</span>
+        </h1>
+
+        <p>
+            Discover a stunning collection of high-quality
+            images from around the world.
+        </p>
+
+        <div class="hero-buttons">
+
+            <button
+                class="primary-button"
+                id="browseButton"
+            >
+                Browse Gallery
+                <span>→</span>
+            </button>
+
+            <button
+                class="secondary-button"
+                id="categoryButton"
+            >
+                View Categories
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     GALLERY SECTION
+========================= -->
+
+<section class="gallery-section" id="gallery">
+
+    <!-- CATEGORY FILTERS -->
+
+    <div class="categories-wrapper" id="categories">
+
+        <div class="category-scroll">
+
+            <button
+                class="category active"
+                data-category="all"
+            >
+                <span>◉</span>
+                All
+            </button>
+
+            <button
+                class="category"
+                data-category="nature"
+            >
+                <span>♧</span>
+                Nature
+            </button>
+
+            <button
+                class="category"
+                data-category="travel"
+            >
+                <span>⌁</span>
+                Travel
+            </button>
+
+            <button
+                class="category"
+                data-category="people"
+            >
+                <span>♙</span>
+                People
+            </button>
+
+            <button
+                class="category"
+                data-category="animals"
+            >
+                <span>♧</span>
+                Animals
+            </button>
+
+            <button
+                class="category"
+                data-category="food"
+            >
+                <span>◈</span>
+                Food
+            </button>
+
+            <button
+                class="category"
+                data-category="architecture"
+            >
+                <span>▦</span>
+                Architecture
+            </button>
+
+            <button
+                class="category"
+                data-category="cars"
+            >
+                <span>▱</span>
+                Cars
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- GALLERY GRID -->
+
+    <div class="gallery-grid" id="galleryGrid">
+
+
+        <!-- IMAGE 1 -->
+
+        <article
+            class="gallery-card card-large"
+            data-category="nature"
+            data-title="Mountain Lake"
+            data-index="0"
+        >
+
+            <div class="image-wrapper">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1400&q=85"
+                    alt="Mountain Lake"
+                    loading="lazy"
+                >
+
+                <div class="image-overlay"></div>
+
+                <button class="favorite-button">
+                    ♡
+                </button>
+
+                <button class="open-button">
+                    ↗
+                </button>
+
+                <div class="image-info">
+                    <span>Nature</span>
+                    <h3>Mountain Lake</h3>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- IMAGE 2 -->
+
+        <article
+            class="gallery-card"
+            data-category="travel"
+            data-title="Coastal Road"
+            data-index="1"
+        >
+
+            <div class="image-wrapper">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85"
+                    alt="Coastal Road"
+                    loading="lazy"
+                >
+
+                <div class="image-overlay"></div>
+
+                <button class="favorite-button">
+                    ♡
+                </button>
+
+                <button class="open-button">
+                    ↗
+                </button>
+
+                <div class="image-info">
+                    <span>Travel</span>
+                    <h3>Coastal Road</h3>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- IMAGE 3 -->
+
+        <article
+            class="gallery-card"
+            data-category="animals"
+            data-title="Wild Cat"
+            data-index="2"
+        >
+
+            <div class="image-wrapper">
+
+                <img
+                    src="https://images.unsplash.com/photo-1518791841217-8f162f1e1131?auto=format&fit=crop&w=1000&q=85"
+                    alt="Cat"
+                    loading="lazy"
+                >
+
+                <div class="image-overlay"></div>
+
+                <button class="favorite-button">
+                    ♡
+                </button>
+
+                <button class="open-button">
+                    ↗
+                </button>
+
+                <div class="image-info">
+                    <span>Animals</span>
+                    <h3>Wild Cat</h3>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- IMAGE 4 -->
+
+        <article
+            class="gallery-card"
+            data-category="nature"
+            data-title="Golden Sunset"
+            data-index="3"
+        >
+
+            <div class="image-wrapper">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=1000&q=85"
+                    alt="Golden Sunset"
+                    loading="lazy"
+                >
+
+                <div class="image-overlay"></div>
+
+                <button class="favorite-button">
+                    ♡
+                </button>
+
+                <button class="open-button">
+                    ↗
+                </button>
+
+                <div class="image-info">
+                    <span>Nature</span>
+                    <h3>Golden Sunset</h3>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- IMAGE 5 -->
+
+        <article
+            class="gallery-card"
+            data-category="architecture"
+            data-title="City Lights"
+            data-index="4"
+        >
+
+            <div class="image-wrapper">
+
+                <img
+                    src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1000&q=85"
+                    alt="City"
+                    loading="lazy"
+                >
+
+                <div class="image-overlay"></div>
+
+                <button class="favorite-button">
+                    ♡
+                </button>
+
+                <button class="open-button">
+                    ↗
+                </button>
+
+                <div class="image-info">
+                    <span>Architecture</span>
+                    <h3>City Lights</h3>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- IMAGE 6 -->
+
+        <article
+            class="gallery-card"
+            data-category="nature"
+            data-title="Waterfall"
+            data-index="5"
+        >
+
+            <div class="image-wrapper">
+
+                <img
+                    src="https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1000&q=85"
+                    alt="Waterfall"
+                    loading="lazy"
+                >
+
+                <div class="image-overlay"></div>
+
+                <button class="favorite-button">
+                    ♡
+                </button>
+
+                <button class="open-button">
+                    ↗
+                </button>
+
+                <div class="image-info">
+                    <span>Nature</span>
+                    <h3>Waterfall</h3>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- IMAGE 7 -->
+
+        <article
+            class="gallery-card"
+            data-category="food"
+            data-title="Fresh Bowl"
+            data-index="6"
+        >
+
+            <div class="image-wrapper">
+
+                <img
+                    src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=85"
+                    alt="Food"
+                    loading="lazy"
+                >
+
+                <div class="image-overlay"></div>
+
+                <button class="favorite-button">
+                    ♡
+                </button>
+
+                <button class="open-button">
+                    ↗
+                </button>
+
+                <div class="image-info">
+                    <span>Food</span>
+                    <h3>Fresh Bowl</h3>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- IMAGE 8 -->
+
+        <article
+            class="gallery-card card-wide"
+            data-category="nature"
+            data-title="Alpine Mountains"
+            data-index="7"
+        >
+
+            <div class="image-wrapper">
+
+                <img
+                    src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=85"
+                    alt="Alpine Mountains"
+                    loading="lazy"
+                >
+
+                <div class="image-overlay"></div>
+
+                <button class="favorite-button">
+                    ♡
+                </button>
+
+                <button class="open-button">
+                    ↗
+                </button>
+
+                <div class="image-info">
+                    <span>Nature</span>
+                    <h3>Alpine Mountains</h3>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- IMAGE 9 -->
+
+        <article
+            class="gallery-card"
+            data-category="travel"
+            data-title="Ocean Escape"
+            data-index="8"
+        >
+
+            <div class="image-wrapper">
+
+                <img
+                    src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=85"
+                    alt="Ocean"
+                    loading="lazy"
+                >
+
+                <div class="image-overlay"></div>
+
+                <button class="favorite-button">
+                    ♡
+                </button>
+
+                <button class="open-button">
+                    ↗
+                </button>
+
+                <div class="image-info">
+                    <span>Travel</span>
+                    <h3>Ocean Escape</h3>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- IMAGE 10 -->
+
+        <article
+            class="gallery-card"
+            data-category="people"
+            data-title="Portrait"
+            data-index="9"
+        >
+
+            <div class="image-wrapper">
+
+                <img
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1000&q=85"
+                    alt="Portrait"
+                    loading="lazy"
+                >
+
+                <div class="image-overlay"></div>
+
+                <button class="favorite-button">
+                    ♡
+                </button>
+
+                <button class="open-button">
+                    ↗
+                </button>
+
+                <div class="image-info">
+                    <span>People</span>
+                    <h3>Portrait</h3>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- IMAGE 11 -->
+
+        <article
+            class="gallery-card"
+            data-category="cars"
+            data-title="Classic Drive"
+            data-index="10"
+        >
+
+            <div class="image-wrapper">
+
+                <img
+                    src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=1000&q=85"
+                    alt="Car"
+                    loading="lazy"
+                >
+
+                <div class="image-overlay"></div>
+
+                <button class="favorite-button">
+                    ♡
+                </button>
+
+                <button class="open-button">
+                    ↗
+                </button>
+
+                <div class="image-info">
+                    <span>Cars</span>
+                    <h3>Classic Drive</h3>
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- IMAGE 12 -->
+
+        <article
+            class="gallery-card"
+            data-category="travel"
+            data-title="Tropical Paradise"
+            data-index="11"
+        >
+
+            <div class="image-wrapper">
+
+                <img
+                    src="https://images.unsplash.com/photo-1470214304380-aadaedcfff1b?auto=format&fit=crop&w=1000&q=85"
+                    alt="Tropical Paradise"
+                    loading="lazy"
+                >
+
+                <div class="image-overlay"></div>
+
+                <button class="favorite-button">
+                    ♡
+                </button>
+
+                <button class="open-button">
+                    ↗
+                </button>
+
+                <div class="image-info">
+                    <span>Travel</span>
+                    <h3>Tropical Paradise</h3>
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <!-- NO RESULT -->
+
+    <div class="no-results" id="noResults">
+        <div>⌁</div>
+        <h3>No images found</h3>
+        <p>Try another search or category.</p>
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="about-section" id="about">
+
+    <div class="about-content">
+
+        <span>ABOUT GALLERY</span>
+
+        <h2>
+            Moments worth
+            <br>
+            <strong>remembering.</strong>
+        </h2>
+
+        <p>
+            Gallery is a simple and elegant space for discovering
+            beautiful photography from nature, travel, people,
+            architecture and everyday life.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     LIGHTBOX
+========================= -->
+
+<div class="lightbox" id="lightbox">
+
+    <div class="lightbox-background"></div>
+
+    <button
+        class="lightbox-close"
+        id="lightboxClose"
+        aria-label="Close"
+    >
+        ×
+    </button>
+
+
+    <button
+        class="lightbox-prev"
+        id="lightboxPrev"
+        aria-label="Previous"
+    >
+        ‹
+    </button>
+
+
+    <div class="lightbox-content">
+
+        <div class="lightbox-image-container">
+
+            <img
+                id="lightboxImage"
+                src=""
+                alt=""
+            >
+
+        </div>
+
+
+        <div class="lightbox-details">
+
+            <div>
+                <span id="lightboxCategory">
+                    Nature
+                </span>
+
+                <h2 id="lightboxTitle">
+                    Mountain Lake
+                </h2>
+            </div>
+
+            <div class="lightbox-counter">
+                <span id="currentNumber">01</span>
+                /
+                <span id="totalNumber">12</span>
+            </div>
+
+        </div>
+
+
+        <!-- THUMBNAILS -->
+
+        <div
+            class="lightbox-thumbnails"
+            id="lightboxThumbnails"
+        ></div>
+
+    </div>
+
+
+    <button
+        class="lightbox-next"
+        id="lightboxNext"
+        aria-label="Next"
+    >
+        ›
+    </button>
+
+</div>
+
+
+<!-- =========================
+     MOBILE BOTTOM NAV
+========================= -->
+
+<nav class="mobile-bottom-nav">
+
+    <a href="#home">
+        <span>⌂</span>
+        <small>Home</small>
+    </a>
+
+    <a href="#gallery" class="active">
+        <span>▣</span>
+        <small>Gallery</small>
+    </a>
+
+    <a href="#categories">
+        <span>♧</span>
+        <small>Categories</small>
+    </a>
+
+    <a href="#about">
+        <span>♙</span>
+        <small>Profile</small>
+    </a>
+
+</nav>
+
+
+<!-- =========================
+     TOAST
+========================= -->
+
+<div class="toast" id="toast">
+    <span>✓</span>
+    <p>Added to favorites</p>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
